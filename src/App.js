@@ -1,13 +1,13 @@
 import './App.css'
 import {Route, Switch} from 'react-router-dom'
 import Home from './components/Home'
-import CourseItemDetailsRoute from './components/CourseItemDetailsRoute'
+import EachCourseDetails from './components/EachCourseDetails'
 import NotFound from './components/NotFound'
 
 const App = () => (
   <Switch>
     <Route exact path="/" component={Home} />
-    <Route exact path="/courses/:id" component={CourseItemDetailsRoute} />
+    <Route exact path="/courses/:id" component={EachCourseDetails} />
     <Route component={NotFound} />
   </Switch>
 )

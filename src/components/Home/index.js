@@ -27,6 +27,18 @@ class Home extends Component {
     description: data.course_details.description,
   })
 
+  getEachCouresDetails = data => {
+    const {isLoading} = this.state
+    return (
+      <EachCourseDetails
+        name={data.name}
+        description={data.description}
+        imageUrl={data.imageUrl}
+        isLoading={isLoading}
+      />
+    )
+  }
+
   onClickItem = async id => {
     const url = `https://apis.ccbp.in/te/courses/${id}`
     const options = {
@@ -35,7 +47,9 @@ class Home extends Component {
     const response = await fetch(url, options)
     const data = await response.json()
     const updatedData = this.getFormattedData(data)
-    this.setState({eachCourseDetails: updatedData})
+    if (updatedData) {
+      this.getEachCouresDetails(updatedData)
+    }
   }
 
   getCoursesList = async () => {
@@ -59,6 +73,7 @@ class Home extends Component {
 
   render() {
     const {coursesList, isFailure, isLoading, eachCourseDetails} = this.state
+    console.log(eachCourseDetails)
 
     return (
       <>
@@ -92,10 +107,6 @@ class Home extends Component {
             )}
           </Link>
         )}
-        <EachCourseDetails
-          eachCourseDetails={eachCourseDetails}
-          isLoading={isLoading}
-        />
       </>
     )
   }

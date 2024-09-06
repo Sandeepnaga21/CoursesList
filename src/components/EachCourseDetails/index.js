@@ -4,8 +4,7 @@ import NavBar from '../NavBar'
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 
 const EachCourseDetails = props => {
-  const {eachCourseDetails, isLoading} = props
-  const {name, description, imageUrl} = eachCourseDetails
+  const {name, description, imageUrl, isLoading} = props
 
   return (
     <>
