@@ -1,24 +1,3 @@
-.app-container {
-  background-color: #ffffff;
-  height: 100vh;
-}
-
-.success-view-container {
-  padding-left: 60px;
-}
-
-.success-view-list-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.success-view-heading {
-  color: #1e293b;
-  font-family: 'Roboto';
-  font-weight: bold;
-  font-size: 32px;
-}
-
 .failure-view-container {
   display: flex;
   flex-direction: column;
@@ -30,6 +9,9 @@
   margin-bottom: 15px;
   margin-top: 50px;
   width: 450px;
+}
+
+.course-details-container {
 }
 
 .failure-view-heading {
